@@ -618,8 +618,7 @@ function readOut(message) {
     //diff voices
     const allVoices = speechSynthesis.getVoices();
     speech.text = message;
-    speech.voice = allVoices[10];
-    //speech.voice = allVoices[167]; //hindi swara
+    speech.voice = allVoices[167]; //hindi swara
     // speech.voice = allVoices[211]; //marathi arohi
     speech.volume = 1;
     speech.rate = 1.1;
