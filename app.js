@@ -269,24 +269,6 @@ recognition.onstart = function() {
     console.log("We are active now");
 };
 
-//call jadoo
-function callJadoo() {
-    readOut("Calling jadoo");
-    setTimeout(() =>{
-        const jadoo = new Audio('Jadoo.mp3');
-        jadoo.play();
-    }, 3000);
-}
-
-//call narsigh
-function callN() {
-    readOut("Calling Narsigha");
-    setTimeout(() => {
-        const n = new Audio('Narsingh.m4a');
-        n.play();
-    }, 4000);
-}
-
 //sr result
 recognition.onresult = function(event) {
     const startSound = new Audio('start_sound.mp3');
@@ -551,14 +533,6 @@ recognition.onresult = function(event) {
     else if (transcript.includes("translate to hindi")) {
         let text = transcript.split("translate to hindi")[1].trim();
         translateToHindi(text);
-    }
-    else if(transcript.includes("call jadoo.") || transcript.includes("call jadu."))
-    {
-        callJadoo();
-    }
-    else if(transcript.includes("call narsiha"))
-    {
-        callN();
     }
     else if (transcript.includes("battery percentage")) {
         getBatteryPercentage();
