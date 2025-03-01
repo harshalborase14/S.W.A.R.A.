@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,200;1,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #5dff44;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Adjust to space-between to ensure all elements are visible */
+  height: 100vh;
+  padding-bottom: 60px; /* Add padding to avoid overlap with footer */
+}
+
+.name {
+  margin: 20px;
+  align-items: center;
+  align-content: center;
+  color: pink;
+  border: 2px dashed pink;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #1e1e1e;
+  display: flex;
+  flex-direction: column; /* Change to column to align items vertically */
+  justify-content: center;
+}
+
+.name h1 {
+  font-size: 2.5rem;
+  justify-content: center;
+  font-weight: 500;
+  align-items: center;
+}
+
+.machine {
+  position: relative;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  user-select: none;
+}
+
+.machine * {
+  position: absolute;
+}
+
+#iron_man {
+  height: 300px;
+  width: 300px;
+  bottom: 0;
+  right: 0;
+}
+
+#heart {
+  bottom: 0;
+  left: 0;
+}
+
+#time {
+  color: white;
+  top: 10px;
+  left: 10px;
+}
+
+.in_middle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(34, 30, 30);
+  padding: 50px;
+  border-radius: 10px;
+  display: flex;
+  z-index: 10000;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.in_middle * {
+  position: static;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  padding: 3px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50px;
+}
+
+.battery {
+  left: 50%;
+  width: 100px;
+  transform: translateX(-50%);
+}
+
+.clock {
+  width: 150px;
+}
+
+.internet {
+  top: 120px;
+  left: 5px;
+  width: 120px;
+}
+
+.temp {
+  top: 70px;
+  right: 660px;
+  text-align: center;
+  font-size: smaller;
+}
+
+.temp * {
+  position: static;
+}
+
+.messeges {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  max-height: 600px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 15px;
+  z-index: 1000;
+}
+
+.messages::-webkit-scrollbar {
+  display: none;
+}
+
+.usermsg {
+  text-align: right;
+  width: 300px;
+  color: rgb(113, 113, 235);
+}
+
+.jmsg {
+  text-align: left;
+  margin-top: 5px;
+  width: 300px;
+  color: rgb(245, 61, 61);
+}
+
+.commands {
+  display: none;
+  background-color: white;
+}
+
+.commands p {
+  color: rgb(197, 0, 0);
+}
+
+#start_jarvis_btn {
+  outline: none;
+  position: fixed;
+  left: 300px;
+  transform: translateX(0);
+  top: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#start_jarvis_btn img {
+  height: 300px;
+  border-radius: 50%;
+}
+
+button {
+  color: black;
+  background-color: #4CAF50; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 15px 32px; /* Some padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  display: block; /* Change to block to ensure buttons are stacked */
+  width: 200px; /* Set a fixed width for consistency */
+  margin: 3px auto; /* Center buttons horizontally and add vertical margin */
+  font-size: 16px; /* Increase font size */
+  cursor: pointer; /* Pointer/hand icon */
+  border-radius: 12px; /* Rounded corners */
+  transition-duration: 0.4s; /* 0.4 seconds transition effect to hover state */
+}
+
+button:hover {
+  background-color: white; /* White background on hover */
+  color: black; /* Black text on hover */
+  border: 2px solid #4CAF50; /* Green border on hover */
+}
+
+label {
+  color: rgb(248, 244, 244);
+  text-align: left;
+}
+
+input {
+  color: black;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid black;
+  width: 60vw;
+  margin-bottom: 10px;
+}
+
+#sub_btn {
+  background-color: red;
+  color: white;
+  width: 80px;
+  padding: 10px 5px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+.jarvis-setup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(34, 30, 30);
+  padding: 50px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10000;
+}
+
+footer {
+  background-color: #1e1e1e;
+  color: #fbfcfb;
+  text-align: center;
+  padding: 20px 0; /* Increase padding for larger size */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 2px solid #5dff44;
+}

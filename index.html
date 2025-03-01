@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>SWARA</title>
+    
+    <!-- Add a favicon -->
+    <link rel="icon" href="images/heart.gif" type="image/png">
+    
+    <!-- Add an Open Graph image -->
+    <!-- <meta property="og:image" content="images/og-image.png"> -->
+</head>
+<body>
+
+    <!-- Smart Women's AI Responsive Assistant (SWARA) -->
+     <div class="name">
+        <h1>S.W.A.R.A</h1>
+        <h4>(Smart Women AI Responsive Assistant)</h4>
+     </div>
+
+    <div class="machine">
+
+        <div class="clock cont">
+            <p id="time"></p>
+        </div>
+
+        <div class="internet cont">
+            <img src="images/internet1.png" class="icon">
+            <p id="internet">Online</p>
+        </div>
+
+        <div class="battery cont">
+            <p id="battry"></p>
+        </div>
+
+        <div class="temp">
+            <p id="admin"></p>
+            <p id="location"></p>
+            <p id="country"></p>
+            <p id="weather"></p>
+            <p id="weatherD"></p>
+            <img src="" id="weatherIcon" />
+            <p id="oTemp"></p>
+            <p id="feelLikeTemp"></p>
+            <p id="minT"></p>
+            <p id="maxT"></p>
+        </div>
+
+        <img src="images/iron_man.gif" id="iron_man">
+        <img src="images/heart.gif" id="heart">
+
+    </div>  
+
+    <div class="jarvis-setup in_middle">
+        
+        <lable for="">Your Name</lable>
+        <input type="text">
+        <br>
+
+        <label for="">Date Of Birth</label>
+        <input type="date">
+        <br>
+
+        <lable for="">Your Bio</lable>
+        <input type="text">
+        <br>
+
+        <lable for="">Your Location</lable>
+        <input type="text">
+        <br>
+
+        <lable for="">Your Instagram Profile</lable>
+        <input type="text">
+        <br>
+
+        <lable for="">Github Profile</lable>
+        <input type="text">
+        <br>
+        
+        <button id="sub_btn">Submit</button>
+    </div>
+    <br>
+
+    <div class="messeges">
+        <div class="usermsg"></div>
+        <div class="jmsg"></div>
+    </div>
+    <div class="commands in_middle">
+
+    </div>
+
+    <div class="ai-responses">
+        <div id="ai_response_container"></div>
+    </div>
+
+    <button id="stop">End</button>
+    <button id="speak">Speak out</button> 
+    <button id="start">Start</button>
+    
+    <script src="./app.js"></script>
+    <script>
+        function updateTime() {
+            const timeElement = document.getElementById('time');
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            timeElement.textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateTime, 1000);
+        window.onload = updateTime;
+
+        function updateBatteryStatus(battery) {
+            const batteryElement = document.getElementById('battry');
+            const chargingStatus = battery.charging ? "⚡" : "";
+            batteryElement.textContent = `${(battery.level * 100).toFixed(0)}% - ${chargingStatus}`;
+        }
+
+        navigator.getBattery().then(function(battery) {
+            updateBatteryStatus(battery);
+            battery.addEventListener('levelchange', function() {
+            updateBatteryStatus(battery);
+        });
+        battery.addEventListener('chargingchange', function() {
+            updateBatteryStatus(battery);
+        });
+    });
+    </script>
+    <noscript>you need javascript for this webapp</noscript>
+
+    <footer>
+        <p>&copy; 2025 SWARA. All rights reserved by Harshal Borase.</p>
+    </footer>
+</body>
+</html>
